@@ -22,7 +22,7 @@ var server = http.createServer(function(req, res) {
             res.end(content);
         });
     }
-}).listen(8080);
+}).listen(8088);
 
 // Chargement de socket.io
 var io = require('socket.io').listen(server);
