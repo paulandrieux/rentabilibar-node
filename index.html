@@ -12,6 +12,7 @@
         <script src="waterbubble.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <script>
+            var audio = new Audio('coin.wav');
             var socket = io.connect('http://appventus.com:8088');
             socket.on('message', function(message) {
                 // alert('Le serveur a un message pour vous : ' + message);
@@ -20,6 +21,7 @@
                     data: parseFloat(message.percent),
                     txt: message.euro+"€"
                 });
+                audio.play();
             });
         $('#demo').waterbubble({
           data: 0,

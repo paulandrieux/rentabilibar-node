@@ -11,6 +11,10 @@ var server = http.createServer(function(req, res) {
         script = fs.readFileSync("waterbubble.min.js", "utf8");
         res.writeHead(200);
         res.end(script);
+    } else if (pathname == "/coin.wav") {
+        file = fs.readFileSync("coin.wav");
+        res.writeHead(200);
+        res.end(file);
     } else if (pathname == "/update") {
         var url_parts = url.parse(req.url,true);
         io.sockets.emit('message', {'euro': url_parts.query.euro, 'percent': url_parts.query.percent});
